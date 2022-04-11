@@ -6,7 +6,9 @@
 
 Fetch is onces of build-in API of mozilla WEB API.
 Fetch API is an alternative way to provides JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses by global fetch() method to fetch resources asynchronously across the network.
-for lastest update example please visit to A repository of Fetch examples. See https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+for lastest update example please visit to A repository of Fetch examples.
+
+See https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 
 basic fetch request is really simple to set up like this:
 <pre>
@@ -28,18 +30,14 @@ by:
     const responsePromise = fetch(resourceUrl [, options]);
 </pre>
 
+|Return Promise|
+|:--|
 | response.arrayBuffer() |
-| :------------- |
 | response.blob() |
-| :------------- |
 | response.error() |
-| :------------- |
 | response.formData() |
-| :------------- |
 | response.json() |
-| :------------- |
 | response.text() |
-| :------------- |
 
 <h3>Example Post method</h3>
 <pre>

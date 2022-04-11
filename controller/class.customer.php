@@ -1,7 +1,7 @@
 <?php
   include_once 'db.php';
   class customer extends database{
-    
+
     public function selectAll(){
       $sql = "SELECT * FROM `customers`";
       $statement = $this->conn->query($sql);
@@ -52,10 +52,9 @@
       //$info = [':Cust_Name'=>'Nopphagaw T.', ":ContactName"=>'Nop9',
       //         ':Address'=>'kmutnb', ':City'=>'prachinburi',
       //         ':PostalCode'=>'20230', ':Country'=>'thailand'];
-      $sql = "INSERT INTO `customers`(`CustomerName`, `ContactName`, `Address`,".
-             "`City`, `PostalCode`, `Country`)".
-             "VALUES (:Cust_Name, :ContactName, :Address,".
-                     ":City, :PostalCode, :Country)";
+      $sql = "INSERT INTO `customers`".
+             "(`CustomerName`, `ContactName`, `Address`, `City`, `PostalCode`, `Country`)".
+             "VALUES (:Cust_Name, :ContactName, :Address, :City, :PostalCode, :Country)";
       $statement = $this->conn->prepare($sql);
       $statement->execute($info);
 
@@ -64,6 +63,30 @@
       //$response["response"] = "Insert Sucessed";
       echo json_encode($response);
     }
+
+    function update($id, $data){
+          echo "<pre>";
+          print_r($data);
+          echo "</pre>";
+          echo $data["CustomerName"];
+          $dat = [':CustomerID'  => $id,
+                  ':CustomerName'=> $data['CustomerName'],
+                  ':ContactName' => $data['ContactName'],
+                  ':Address'     => $data['Address'],
+                  ':City'        => $data['City'],
+                  ':PostalCode'  => $data['PostalCode'],
+                  ':Country'     => $data['Country'] ];
+
+          $sql = "UPDATE `customers`
+                  SET `CustomerName`=:CustomerName,
+                      `ContactName` =:ContactName,
+                      `Address`     =:Address,
+                      `City`        =:City,
+                      `PostalCode`  =:PostalCode,
+                      `Country`     =:Country
+                  WHERE `CustomerID`=:CustomerID";
+          $statemeny = $this->conn->prepare($sql)->execute($dat);
+        }
 
     public function del_byid($id){
       //DELETE FROM `customers` WHERE `CustomerID`

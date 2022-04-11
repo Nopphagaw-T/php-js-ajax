@@ -11,5 +11,29 @@
       <tbody id="contents"></tbody>
     </table>
     <script src="script.js" charset="utf-8"></script>
+
+    <!-- Start Modal section  -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Add New Customer</h2>
+        </div>
+        <div class="modal-body">
+          <p><input type="text" placeholder="Enter name here" name="Cust_Name"   value=""></p>
+          <p><input type="text" placeholder="Contact Name"    name="ContactName" value=""></p>
+          <p><input type="text" placeholder="Address"         name="Address"     value=""></p>
+          <p><input type="text" placeholder="City"            name="City"        value=""></p>
+          <p><input type="text" placeholder="2xxxx"           name="PostalCode"  value=""></p>
+          <p><input type="text" placeholder="thailand"        name="Country"     value=""></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" name="button" onclick="todo_ins()">Save</button>
+          <h3>Modal Footer</h3>
+        </div>
+      </div>
+    </div>
+    <!-- End Model Section-->
   </body>
 </html>

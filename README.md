@@ -21,3 +21,31 @@ by:
   - fetch() returns a Promise that resolves with a Response object, which is fulfilled once the response is available.
 
     const responsePromise = fetch(resourceUrl [, options]);
+
+    response.arrayBuffer(): 	
+    	returns a promise that resolves with an ArrayBuffer.
+    response.blob(): 			
+    	returns a Promise that resolves with a Blob.
+    response.error(): 			
+    	returns a new Response object associated with a network error.
+    response.formData():
+    	returns a Promise that resolves with a FormData.
+    response.json(): 			
+    	returns a Promise that resolves with the result of parsing as JSON.
+    response.text():
+    	returns a Promise that resolves with a text.
+
+<h3>Example Post method</h3>
+async function getData() {
+  try {
+    const response = await fetch(UrlResource);
+    if (!response.ok) {
+      const message = 'Error with Status Code: ' + response.status;
+      throw new Error(message);
+    }
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log('Error: ' + err);
+  }
+}

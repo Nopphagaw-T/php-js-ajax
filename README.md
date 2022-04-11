@@ -30,28 +30,16 @@ by:
 
 | response.arrayBuffer() |
 | :------------- |
-| returns a promise that resolves with an ArrayBuffer.|
-
 | response.blob() |
 | :------------- |
-| returns a Promise that resolves with a Blob.|
-
-
 | response.error() |
 | :------------- |
-| returns a new Response object associated with a network error.|
-
 | response.formData() |
 | :------------- |
-| returns a Promise that resolves with a FormData.|
-
 | response.json() |
 | :------------- |
-| returns a Promise that resolves with the result of parsing as JSON.|
-
 | response.text() |
 | :------------- |
-| returns a Promise that resolves with a text.|
 
 <h3>Example Post method</h3>
 <pre>

@@ -2,8 +2,11 @@
 
 <h1>welcome to my repo</h1>
 
-<h3>Introduce Fetch API</h3>
+<h3>How to Implement FatchAPI</h3>
+
+Fetch is onces of build-in API of mozilla WEB API.
 Fetch API is an alternative way to provides JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses by global fetch() method to fetch resources asynchronously across the network.
+for lastest update example please visit to A repository of Fetch examples. See https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 
 basic fetch request is really simple to set up like this:
 <pre>
@@ -52,7 +55,7 @@ by:
 
 <h3>Example Post method</h3>
 <pre>
-async function getData() {
+async function getData(UrlResource) {
   try {
     const response = await fetch(UrlResource);
     if (!response.ok) {
